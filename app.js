@@ -6,7 +6,7 @@ var nodemailer = require("nodemailer");
 
 var app = express();
 
-var port = process.env.PORT || 3001;
+var port = process.env.PORT || 3000;
 
 // setting up views
 app.set("views", path.join(__dirname, "views"));
@@ -78,13 +78,13 @@ app.post("/", function(req, res) {
   let transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
-      user: "<emailofsender>",
+      user: "<email_sender>",
       pass: "<getapp_password>"
     }
   });
 
   let mailOptions = {
-    from: "<emailofsender>", // sender address
+    from: "<email_sender>", // sender address
     to: email, // list of receivers
     subject: "email test", // Subject line
     text: "Dear " + name + ", Welcome to our app" // plain text body
